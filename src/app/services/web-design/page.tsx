@@ -1,6 +1,13 @@
 import React from "react";
+import { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
+export const metadata: Metadata = {
+  title: "Professional Web Design Services in India | H-One WebZen",
+  description: "H-One WebZen offers premium UI/UX and web design services in India. We create high-conversion, responsive websites tailored for business growth.",
+  keywords: "web design services India, UI/UX design company, responsive web design, professional website design",
+};
 
 export default function WebDesignPage() {
   return (

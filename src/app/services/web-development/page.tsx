@@ -1,6 +1,13 @@
 import React from "react";
+import { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
+export const metadata: Metadata = {
+  title: "Custom Web Development Company in India | H-One WebZen",
+  description: "Top-tier custom web development services in India. We build scalable, high-performance web applications and systems using modern technology.",
+  keywords: "web development company India, custom web application development, full-stack development India, enterprise web solutions",
+};
 
 export default function WebDevPage() {
   return (
