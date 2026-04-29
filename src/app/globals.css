@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --brand-accent: #6366F1;
+  --brand-highlight: #22D3EE;
+  --text-primary: #0F172A;
+  --text-muted: #64748B;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="dark"] {
+  --background: #050816;
+  --foreground: #F8FAFC;
+  --brand-accent: #6366F1;
+  --brand-highlight: #22D3EE;
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.8s cubic-bezier(0.23, 1, 0.32, 1), color 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.02] backdrop-blur-3xl border border-white/5 rounded-[2rem] transition-all duration-700 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)];
+  }
+  
+  .interactive {
+    @apply cursor-none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
