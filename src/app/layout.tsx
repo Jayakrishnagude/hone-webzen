@@ -1,9 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+
+export const viewport: Viewport = {
+  themeColor: "#6366F1",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "H-One WebZen | Website Design & Development Company in India",
@@ -36,8 +42,6 @@ export const metadata: Metadata = {
     title: "H-One WebZen | Website Design & Development Company in India",
     description: "Leading web design and development company in India. High-performance e-commerce, AI tools, and SEO optimization.",
   },
-  themeColor: "#6366F1",
-  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
