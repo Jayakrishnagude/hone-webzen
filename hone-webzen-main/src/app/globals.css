@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F9F9F9;
+  --foreground: #000000;
+  --border-color: #E5E5E5;
+  --text-muted: #666666;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter), sans-serif;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+@layer components {
+  .brutalist-card {
+    @apply bg-white border border-black/10 transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F9F9F9;
+  border-left: 1px solid #E5E5E5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
