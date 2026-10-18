@@ -56,14 +56,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9324202754818541"
-          crossOrigin="anonymous"
-        ></script>
-        {/* Ad Network Tag */}
-        <script src="https://quge5.com/88/tag.min.js" data-zone="245678" async data-cfasync="false"></script>
+        {/* Unregister any lingering legacy Service Workers (e.g., Monetag) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                  for (var registration of registrations) {
+                    registration.unregister();
+                  }
+                });
+              }
+            `,
+          }}
+        />
         {/* Organization Schema */}
         <script
           type="application/ld+json"
